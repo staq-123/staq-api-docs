@@ -6,7 +6,9 @@ Version 1 of the API is limited to event tracking and IAP purchase server verifi
 
 The API is a [REST API](http://en.wikipedia.org/wiki/Representational_State_Transfer "RESTful")
 and uses an AppSecret specified in the http header for authenticating request.
+
 You can signup at [http://staq.io](http://staq.io) or login at [https://dashboard.staq.io](https://dashboard.staq.io).
+
 AppSecret and AppId are visible in the dashboard by clicking on **User => Show Api Keys**.
 Input and output format for all endpoints is [JSON](http://json.org/ "JSON").
 
@@ -47,9 +49,17 @@ Logged events:
 
 Url parameters:
 
-`appId` | *An application id*
-`deviceId` | *An arbitrary device id or [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier)*
-
+<table>
+	<tr>
+		<td>`appId`</td>
+		<td>*An application id*</td>
+	</tr>
+	<tr>
+		<td>`deviceId`</td>
+		<td>*An arbitrary device id or [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier)*</td>
+	</tr>
+</table>
+ 
 Json Parameters:
 <code>body</code> | *An arbitray JSON blob contains platform and/or custom information* 
 
