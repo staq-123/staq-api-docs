@@ -10,7 +10,7 @@ and uses an AppSecret specified in the http header for authenticating request.
 You can signup at [http://staq.io](http://staq.io) or login at [https://dashboard.staq.io](https://dashboard.staq.io).
 
 AppSecret and AppId are visible in the dashboard by clicking on **User => Show Api Keys**.
-Input and output format for all endpoints is [JSON](http://json.org/ "JSON").
+Input and output format is [JSON](http://json.org/ "JSON").
 
 ***
 
