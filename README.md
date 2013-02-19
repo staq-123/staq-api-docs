@@ -24,7 +24,7 @@ In order to authenticate your requests you need to specifiy the following parame
 Auth-Token: YOUR-AUTH-TOKEN
 ```
 
-## API methods
+# API methods
 
 - **[<code>POST</code> /apps/{appId}/auth/device/{deviceId}](#auth-post)**
 - **[<code>POST</code> /apps/{appId}/users/{userId}/iap/apple](#iap-apple-post)**
@@ -34,7 +34,7 @@ Auth-Token: YOUR-AUTH-TOKEN
 
 <code>POST /apps/{appId}/auth/device/{deviceId}</code>
 
-# Description
+### Description
 
 This resource allows you to authorize an anonymous user and post events for logging new installation and session events.
 
@@ -43,7 +43,7 @@ Logged events:
 - <code>server_INSTALL</code> - New installation event
 - <code>server_SESSION_START</code> - New session event
 
-# Parameters
+### Parameters
 
 - ** appID - 
 
