@@ -24,4 +24,14 @@ In order to authenticate your requests you need to specifiy the following parame
 Auth-Token: YOUR-AUTH-TOKEN
 ```
 
+## API methods
+
+- **[<code>POST</code> /apps/{appId}/auth/device/{deviceId}](#auth-post)**
+- **[<code>POST</code> /apps/{appId}/users/{userId}/iap/apple](#iap-apple-post)**
+- **[<code>POST</code> /apps/{appId}/users/{userId}/events](#events-post)**
+
+## <a id="auth-post"></a>Device Authorization
+
+
+
 
