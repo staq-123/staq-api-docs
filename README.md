@@ -46,7 +46,7 @@ Logged events:
 <table>
 	<tr>
 		<td><code>appId</code></td>
-		<td>**An application id**</td>
+		<td><em>An application id</em></td>
 	</tr>
 	<tr>
 		<td><code>deviceId</code></td>
