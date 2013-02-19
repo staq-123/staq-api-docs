@@ -32,6 +32,34 @@ Auth-Token: YOUR-AUTH-TOKEN
 
 ## <a id="auth-post"></a>Device Authorization
 
+<code>POST /apps/{appId}/auth/device/{deviceId}</code>
 
+# Description
+
+This resource allows you to authorize an anonymous user and post events for logging new installation and session events.
+
+Logged events:
+
+- <code>server_INSTALL</code> - New installation event
+- <code>server_SESSION_START</code> - New session event
+
+# Parameters
+
+- ** appID - 
+
+<pre><code>
+Request:
+
+POST /apps/{appId}/auth/device/{deviceId} HTTP/1.1
+Host: example.org
+Content-Type: application/json; charset=utf-8
+
+{"status": "ok", "extended": true}
+
+Response:
+
+
+
+</code></pre>
 
 
