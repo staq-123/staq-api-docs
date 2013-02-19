@@ -46,36 +46,36 @@ Logged events:
 <table>
 	<tr>
 		<td><code>appId</code></td>
-		<td><em>An application id</em></td>
+		<td>An application id</td>
 	</tr>
 	<tr>
 		<td><code>deviceId</code></td>
-		<td>**An arbitrary device id or [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier)**</td>
+		<td>An arbitrary device id or [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier)</td>
 	</tr>
 </table>
  
 **Json Parameters:**
 
-*An arbitray JSON blob contains platform and/or other custom information that you want to associate with the user.*
+An arbitray JSON blob contains platform and/or other custom information that you want to associate with the user.
 
 ### Response
 
 <table>
 	<tr>
-		<td>`appId`</td>
-		<td>*Your application id*</td>
+		<td><code>appId</code></td>
+		<td>Your application id</td>
 	</tr>
 	<tr>
-		<td>`uid`</td>
-		<td>*An id that staq assign to the current user. This is required as input parameter by other api resources.*</td>
+		<td><code>uid</code></td>
+		<td>An id that staq assign to the current user. This is required as input parameter by other api resources.</td>
 	</tr>
 	<tr>
-		<td>`sid`</td>
+		<td><code>sid</code></td>
 		<td>*An id associated with the current session.*</td>
 	</tr>
 	<tr>
-		<td>`token`</td>
-		<td>*An authorization token associated with the current user. This is required as input parameter by other api resources.*</td>
+		<td><code>token</code></td>
+		<td>An authorization token associated with the current user. This is required as input parameter by other api resources.</td>
 	</tr>
 </table>
 
@@ -124,8 +124,8 @@ Logged events:
 
 <table>
 	<tr>
-		<td>`Auth-Token`</td>
-		<td>*An authorization token associated with the current user*</td>
+		<td><code>Auth-Token</code></td>
+		<td>An authorization token associated with the current user</td>
 	</tr>
 </table>
 
@@ -133,12 +133,12 @@ Logged events:
 
 <table>
 	<tr>
-		<td>`appId`</td>
+		<td><code>appId</code></td>
 		<td>*Application id*</td>
 	</tr>
 	<tr>
-		<td>`uid`</td>
-		<td>*User id provided by the authroization call of the staq API.*</td>
+		<td><code>uid</code></td>
+		<td>User id provided by the authroization call of the staq API.</td>
 	</tr>
 </table>
  
@@ -146,32 +146,32 @@ Logged events:
 
 <table>
 	<tr>
-		<td>`sid`</td>
-		<td>*Session id provided by the authroization call of the staq API.*</td>
+		<td><code>sid</code></td>
+		<td>Session id provided by the authroization call of the staq API.</td>
 	</tr>
 	<tr>
-		<td>`uid`</td>
-		<td>*User id provided by the authroization call of the staq API.*</td>
+		<td><code>uid</code></td>
+		<td>User id provided by the authroization call of the staq API.</td>
 	</tr>
 	<tr>
-		<td>`receipt`</td>
-		<td>*[An iOS receipt to validate](http://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008267-CH1-SW1).*</td>
+		<td><code>receipt</code></td>
+		<td>[An iOS receipt to validate](http://developer.apple.com/library/ios/#documentation/NetworkingInternet/Conceptual/StoreKitGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40008267-CH1-SW1)</td>
 	</tr>
 	<tr>
-		<td>`priceUsd`</td>
-		<td>*Numeric value of the price of the item expressed in USD. ex: 9.99*</td>
+		<td><code>priceUsd</code></td>
+		<td>Numeric value of the price of the item expressed in USD. <em>ex: 9.99</em></td>
 	</tr>
 	<tr>
-		<td>`status`</td>
-		<td>*Status of the current IAP. Possible values are: 'processing' and 'completed'*</td>
+		<td><code>status</code></td>
+		<td>Status of the current IAP. Possible values are: <code>processing</code> and <code>completed</code></td>
 	</tr>
 	<tr>
-		<td>`comment`</td>
-		<td>*A comment string to attach to the current transaction*</td>
+		<td><code>comment</code></td>
+		<td>A comment string to attach to the current transaction</td>
 	</tr>
 	<tr>
-		<td>`metadata`</td>
-		<td>*An arbitray JSON blob contains platform and/or other custom information that you want to associate with the user.*</td>
+		<td><code>metadata</code></td>
+		<td>An arbitray JSON blob contains platform and/or other custom information that you want to associate with the user.</td>
 	</tr>
 </table>
 
@@ -180,12 +180,12 @@ Logged events:
 
 <table>
 	<tr>
-		<td>`isValid`</td>
+		<td><code>isValid</code></td>
 		<td>*Boolean value. True if this is a valid receipt.*</td>
 	</tr>
 	<tr>
-		<td>`isDuplicate`</td>
-		<td>*Boolean value. True if the receipt has been already validated.*</td>
+		<td><code>isDuplicate</code></td>
+		<td>Boolean value. True if the receipt has been already validated.</td>
 	</tr>
 </table>
 
@@ -223,17 +223,12 @@ Content-Type: application/json
 
 ## Post Events
 
-<code>POST /apps/{appId}/users/{uid}/iap/apple</code>
+<code>POST /apps/{appId}/users/{userId}/events</code>
 
 ### Description
 
-This resource allows you to verify an iOS in-app purchase.
+This resource allows you to post an array of custom events.
 
-This method will log the following events:
-
-Logged events:
-
-- <code>server_IAP_COMPLETED</code> - Completed IAP event
 
 ### Request parameters
 
@@ -241,7 +236,7 @@ Logged events:
 
 <table>
 	<tr>
-		<td>`Auth-Token`</td>
+		<td><code>Auth-Token</code></td>
 		<td>*An authorization token associated with the current user*</td>
 	</tr>
 </table>
