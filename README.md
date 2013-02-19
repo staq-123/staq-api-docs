@@ -20,8 +20,8 @@ Input and output format for all endpoints is [JSON](http://json.org/ "JSON").
 
 In order to authenticate your requests you need to specifiy the following parameter in the <code>HTTP HEADER</code>:
 
-```HTTP
+``` HTTP
 Auth-Token: YOUR-AUTH-TOKEN
-```HTTP
+```
 
 
