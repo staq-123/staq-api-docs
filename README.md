@@ -45,11 +45,11 @@ Logged events:
 
 <table>
 	<tr>
-		<td>``appId``</td>
+		<td><code>appId</code></td>
 		<td>**An application id**</td>
 	</tr>
 	<tr>
-		<td>`deviceId`</td>
+		<td><code>deviceId</code></td>
 		<td>**An arbitrary device id or [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier)**</td>
 	</tr>
 </table>
