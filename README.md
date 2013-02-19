@@ -14,11 +14,14 @@ Input and output format for all endpoints is [JSON](http://json.org/ "JSON").
 
 ## Endpoint
 
-**Base url**: https://api.staq.io/v1
+**<code>Base url</code>**: https://api.staq.io/v1
 
 ## Authenticating requests
 
-In order to authenticate your requests you need to specifiy the following parameter in the <code>HTTP HEADER</code>
+In order to authenticate your requests you need to specifiy the following parameter in the <code>HTTP HEADER</code>:
 
+```HTTP
+Auth-Token: YOUR-AUTH-TOKEN
+```HTTP
 
 
