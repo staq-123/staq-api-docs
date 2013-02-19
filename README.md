@@ -26,7 +26,7 @@ Auth-Token: YOUR-AUTH-TOKEN
 
 # API methods
 
-- **[<code>POST</code> /apps/{appId}/auth/device/{deviceId}](#auth-post)**
+- **[<code>POST</code> /apps/{appId}/auth/device/{deviceId}](#device-authorization)**
 - **[<code>POST</code> /apps/{appId}/users/{userId}/iap/apple](#iap-apple-post)**
 - **[<code>POST</code> /apps/{appId}/users/{userId}/events](#events-post)**
 
@@ -45,21 +45,22 @@ Logged events:
 
 ### Parameters
 
-- ** appID - 
+Url parameters:
+<code>appId</code> | *An application id* 
+<code>deviceId</code> | *An arbitrary device id or [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier)* 
 
-<pre><code>
+Json Parameters:
+<code>body</code> | *An arbitray JSON blob contains platform and/or custom information* 
+
+
+```http
 Request:
-
-POST /apps/{appId}/auth/device/{deviceId} HTTP/1.1
+POST /apps/app-000001/auth/device/mydeviceId HTTP/1.1
 Host: example.org
 Content-Type: application/json; charset=utf-8
 
 {"status": "ok", "extended": true}
 
 Response:
-
-
-
-</code></pre>
-
+```
 
