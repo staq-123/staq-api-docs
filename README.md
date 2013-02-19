@@ -46,8 +46,9 @@ Logged events:
 ### Parameters
 
 Url parameters:
-| `appId` | *An application id* |
-| `deviceId` | *An arbitrary device id or [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier)* |
+
+`appId` | *An application id*
+`deviceId` | *An arbitrary device id or [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier)*
 
 Json Parameters:
 <code>body</code> | *An arbitray JSON blob contains platform and/or custom information* 
