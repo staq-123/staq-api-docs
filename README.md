@@ -50,7 +50,7 @@ Logged events:
 	</tr>
 	<tr>
 		<td><code>deviceId</code></td>
-		<td>An arbitrary device id or [UUID](http://en.wikipedia.org/wiki/Universally_unique_identifier)</td>
+		<td>An arbitrary device id or <a href="http://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a></td>
 	</tr>
 </table>
  
@@ -71,7 +71,7 @@ An arbitray JSON blob contains platform and/or other custom information that you
 	</tr>
 	<tr>
 		<td><code>sid</code></td>
-		<td>*An id associated with the current session.*</td>
+		<td>An id associated with the current session.</td>
 	</tr>
 	<tr>
 		<td><code>token</code></td>
@@ -181,7 +181,7 @@ Logged events:
 <table>
 	<tr>
 		<td><code>isValid</code></td>
-		<td>*Boolean value. True if this is a valid receipt.*</td>
+		<td>Boolean value. True if this is a valid receipt.</td>
 	</tr>
 	<tr>
 		<td><code>isDuplicate</code></td>
@@ -280,7 +280,7 @@ This resource allows you to post an array of custom events.
 				</tr>
 				<tr>
 					<td>`metadata`</td>
-					<td>*An arbitray JSON blob contains platform and/or other custom information that you want to associate with the user.*</td>
+					<td>An arbitray JSON blob contains platform and/or other custom information that you want to associate with the user.</td>
 				</tr>
 			</table>
 		<td>
