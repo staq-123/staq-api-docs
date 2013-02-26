@@ -26,7 +26,7 @@ Input and output format is [JSON](http://json.org/ "JSON").
 
 ## Device Authorization
 
-<code>POST /apps/{appId}/auth/device/{deviceId}</code>
+<code>POST /apps/{appId}/auth/device</code>
 
 ### Description
 
@@ -48,15 +48,20 @@ Logged events:
 		<td><code>appId</code></td>
 		<td>An application id</td>
 	</tr>
-	<tr>
-		<td><code>deviceId</code></td>
-		<td>An arbitrary device id or <a href="http://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a></td>
-	</tr>
 </table>
  
 **Json Parameters:**
 
-An arbitray JSON blob contains platform and/or other custom information that you want to associate with the user.
+<table>
+	<tr>
+		<td><code>deviceId</code></td>
+		<td>An arbitrary device id or <a href="http://en.wikipedia.org/wiki/Universally_unique_identifier">UUID</a></td>
+	</tr>
+	<tr>
+		<td><code>deviceInfo</code></td>
+		<td>An arbitray JSON object contains platform and/or other custom information that you want to associate with the user.</td>
+	</tr>
+</table>
 
 ### Response
 
@@ -83,14 +88,18 @@ An arbitray JSON blob contains platform and/or other custom information that you
 
 ```http
 Request:
-POST https://api.staq.io/v1/apps/app-000001/auth/device/mydeviceId HTTP/1.1
+POST https://api.staq.io/v1/apps/app-000001/auth/device HTTP/1.1
 Host: staq.io
 Content-Type: application/json; charset=utf-8
 
 {
-	"env-variable-1": "value1", 
-        "other-env-variable": "value2"   
-} 
+	"deviceId": "my device ID",
+	"deviceInfo":
+	{
+		"env-variable-1": "value1", 
+		"other-env-variable": "value2"   
+	}
+}
 
 Response:
 200 (OK)
