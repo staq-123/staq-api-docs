@@ -230,7 +230,7 @@ Content-Type: application/json
    "isValid":true,
    "isDuplicated":false
 }
-``
+```
 
 ## Google Play IAP Verification
 
