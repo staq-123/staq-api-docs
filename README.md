@@ -193,7 +193,8 @@ Logged events:
 
 ```http
 Request:
-POST /apps/app-000001/auth/device/mydeviceId HTTP/1.1
+
+POST /apps/app-000001/users/my-udid/iap/apple HTTP/1.1
 Host: example.org
 Content-Type: application/json; charset=utf-8
 Auth-Token: your-auth-token
@@ -296,7 +297,7 @@ A string array of event id.
 
 ```http
 Request:
-POST /apps/app-000001/auth/device/mydeviceId HTTP/1.1
+POST /apps/app-000001/users/my-udid/events HTTP/1.1
 Host: example.org
 Content-Type: application/json; charset=utf-8
 Auth-Token: your-auth-token
