@@ -22,6 +22,7 @@ Input and output format is [JSON](http://json.org/ "JSON").
 
 - **[<code>POST</code> /apps/{appId}/auth/device/{deviceId}](#device-authorization)**
 - **[<code>POST</code> /apps/{appId}/users/{userId}/iap/apple](#ios-iap-verification)**
+- **[<code>POST</code> /apps/{appId}/users/{userId}/iap/googleplay](#google-play-iap-verification)**
 - **[<code>POST</code> /apps/{appId}/users/{userId}/events](#custom-events)**
 
 ## Device Authorization
@@ -203,7 +204,7 @@ Logged events:
 ```http
 Request:
 
-POST /apps/app-000001/users/my-udid/iap/apple HTTP/1.1
+POST /apps/app-000001/users/uid-00001/iap/apple HTTP/1.1
 Host: example.org
 Content-Type: application/json; charset=utf-8
 Auth-Token: your-auth-token
@@ -229,7 +230,126 @@ Content-Type: application/json
    "isValid":true,
    "isDuplicated":false
 }
-```
+``
+
+## Google Play IAP Verification
+
+<code>POST /apps/{appId}/users/{uid}/iap/googleplay</code>
+
+### Description
+
+This resource allows you to verify a Google Play in-app purchase.
+
+This method will log the following events:
+
+Logged events:
+
+- <code>server_IAP_COMPLETED</code> - Completed IAP event
+
+### Request parameters
+
+**HTTP Header parameters:**
+
+<table>
+	<tr>
+		<td><code>Auth-Token</code></td>
+		<td>An authorization token associated with the current user</td>
+	</tr>
+</table>
+
+**Url parameters:**
+
+<table>
+	<tr>
+		<td><code>appId</code></td>
+		<td>*Application id*</td>
+	</tr>
+	<tr>
+		<td><code>uid</code></td>
+		<td>User id provided by the authroization method of the staq API.</td>
+	</tr>
+</table>
+ 
+**Json Parameters:**
+
+<table>
+	<tr>
+		<td><code>sid</code></td>
+		<td>Session id provided by the authroization call of the staq API.</td>
+	</tr>
+	<tr>
+		<td><code>uid</code></td>
+		<td>User id provided by the authroization call of the staq API.</td>
+	</tr>
+	<tr>
+		<td><code>receipt</code></td>
+		<td>The <strong>Base 64</strong> encoded data that is mapped to the INAPP_PURCHASE_DATA key in the response Intent from the <a href="http://developer.android.com/google/play/billing/billing_integrate.html">Google Play In-App Billing API</a>.</td>
+	</tr>
+	<tr>
+		<td><code>signature</code></td>
+		<td>The <strong>Base 64</strong> encoded data that is mapped to the INAPP_DATA_SIGNATURE key in the response Intent from the <a href="http://developer.android.com/google/play/billing/billing_integrate.html">Google Play In-App Billing API</a>.</td>
+	</tr>
+	<tr>
+		<td><code>priceUsd</code></td>
+		<td>Numeric value of the price of the item expressed in USD. <em>ex: 9.99</em></td>
+	</tr>
+	
+	<tr>
+		<td><code>comment</code></td>
+		<td>A comment string to attach to the current transaction</td>
+	</tr>
+	<tr>
+		<td><code>metadata</code></td>
+		<td>An arbitray JSON blob contains platform and/or other custom information that you want to associate with the user.</td>
+	</tr>
+</table>
+
+
+### Response
+
+<table>
+	<tr>
+		<td><code>isValid</code></td>
+		<td>Boolean value. True if this is a valid receipt.</td>
+	</tr>
+	<tr>
+		<td><code>isDuplicate</code></td>
+		<td>Boolean value. True if the receipt has been already validated.</td>
+	</tr>
+</table>
+
+### Example
+
+```http
+Request:
+
+POST /apps/app-000001/users/uid-00001/iap/googleplay HTTP/1.1
+Host: example.org
+Content-Type: application/json; charset=utf-8
+Auth-Token: your-auth-token
+
+{ 
+    "sid": "session-id",
+    "uid": "user-id",
+    "receipt" : "BASE64-OF-THE-PURCHASE-DATA",
+    "signature" : "BASE64-OF-THE-SIGNATURE-DATA",
+    "priceUsd" : 9.99,
+    "comment" : "this is a comment",
+    "metadata": {
+        "env-variable-1": "value1", 
+        "other-env-variable": "value2"   
+    } 
+}
+
+Response:
+200 (OK)
+Content-Type: application/json
+
+{
+   "isValid":true,
+   "isDuplicated":false
+}
+``
 
 ## Custom Events
 
@@ -306,7 +426,7 @@ A string array of event id.
 
 ```http
 Request:
-POST /apps/app-000001/users/my-udid/events HTTP/1.1
+POST /apps/app-000001/users/uid-00001/events HTTP/1.1
 Host: example.org
 Content-Type: application/json; charset=utf-8
 Auth-Token: your-auth-token
