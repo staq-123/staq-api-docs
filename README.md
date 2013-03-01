@@ -144,7 +144,7 @@ Logged events:
 <table>
 	<tr>
 		<td><code>appId</code></td>
-		<td>*Application id*</td>
+		<td>Application id</td>
 	</tr>
 	<tr>
 		<td><code>uid</code></td>
@@ -258,7 +258,7 @@ Logged events:
 <table>
 	<tr>
 		<td><code>appId</code></td>
-		<td>*Application id*</td>
+		<td>Application id</td>
 	</tr>
 	<tr>
 		<td><code>uid</code></td>
@@ -317,7 +317,7 @@ Logged events:
 
 ### Example
 
-```http
+```http 
 Request:
 
 POST /apps/app-000001/users/uid-00001/iap/googleplay HTTP/1.1
@@ -346,7 +346,7 @@ Content-Type: application/json
    "isValid":true,
    "isDuplicated":false
 }
-``
+```
 
 ## Custom Events
 
