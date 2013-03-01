@@ -283,6 +283,10 @@ Logged events:
 		<td>The <strong>Base 64</strong> encoded data that is mapped to the INAPP_DATA_SIGNATURE key in the response Intent from the <a href="http://developer.android.com/google/play/billing/billing_integrate.html">Google Play In-App Billing API</a>.</td>
 	</tr>
 	<tr>
+		<td><code>status</code></td>
+		<td>Status of the current IAP. Possible values are: <code>processing</code> and <code>completed</code></td>
+	</tr>
+	<tr>
 		<td><code>priceUsd</code></td>
 		<td>Numeric value of the price of the item expressed in USD. <em>ex: 9.99</em></td>
 	</tr>
@@ -325,6 +329,7 @@ Auth-Token: your-auth-token
     "sid": "session-id",
     "receipt" : "BASE64-OF-THE-PURCHASE-DATA",
     "signature" : "BASE64-OF-THE-SIGNATURE-DATA",
+    "status" : "completed",
     "priceUsd" : 9.99,
     "comment" : "this is a comment",
     "metadata": {
